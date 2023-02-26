@@ -66,7 +66,7 @@ public class FlightDAO {
         Connection connection = ConnectionUtil.getConnection();
         try {
             //Write SQL logic here
-            String sql = "SELECT * FROM Flights WHERE flight_id = "+id;
+            String sql = "SELECT * FROM flight WHERE flight_id = "+id;
             
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
@@ -108,7 +108,7 @@ public class FlightDAO {
         try {
             //Write SQL logic here. When inserting, you only need to define the departure_city and arrival_city
             //values (two columns total!)
-            String sql = "change me" ;
+            String sql = "INSERT INTO Flights " ;
             PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
             //write preparedStatement's setString and setInt methods here.

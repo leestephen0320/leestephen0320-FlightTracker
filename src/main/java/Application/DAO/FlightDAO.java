@@ -33,7 +33,7 @@ public class FlightDAO {
         List<Flight> flights = new ArrayList<>();
         try {
             //Write SQL logic here
-            String sql = "SELECT * FROM flights;";
+            String sql = "SELECT * FROM flight;";
 
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet rs = preparedStatement.executeQuery();
@@ -108,7 +108,8 @@ public class FlightDAO {
         try {
             //Write SQL logic here. When inserting, you only need to define the departure_city and arrival_city
             //values (two columns total!)
-            String sql = "INSERT INTO Flights " ;
+            String sql = "INSERT INTO flight (departure_city, arrival_city) VALUES ("+flight.getDeparture_city()+", "+
+            flight.getArrival_city()+");" ;
             PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
             //write preparedStatement's setString and setInt methods here.
